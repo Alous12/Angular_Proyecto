@@ -3,12 +3,14 @@ import { PaginaNoEncontrontadaComponent } from './paginas/pagina-no-encontrontad
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { CharacterComponent } from './elementos/character/character.component';
 import { PersonajesComponent } from './paginas/personajes/personajes.component';
+import { EpisodiosComponent } from './paginas/episodios/episodios.component';
 
 export const routes: Routes = [
 
     {path: 'inicio', component: InicioComponent},
     {path: 'character', component: CharacterComponent},
     {path: 'personajes', component: PersonajesComponent},
+    {path: 'episodios', component: EpisodiosComponent},
     {path: '', redirectTo: '/inicio', pathMatch: 'full'},
     {path: '**', component: PaginaNoEncontrontadaComponent},
     

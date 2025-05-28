@@ -1,0 +1,9 @@
+<div class="contenedor-episodios">
+  @for (episode of ListadoEpisodios; track episode.id) {
+    <div>
+      <app-episode [episodios]="episode"></app-episode>
+    </div>
+  } @empty {
+    <p>No existen episodios</p>
+  }
+</div>
