@@ -10,5 +10,4 @@ import { CharacterService } from '../../servicios/character.service';
 })
 export class CharacterComponent {
   @Input() personajes: results | undefined;
-  
 }
