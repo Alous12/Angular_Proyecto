@@ -1,0 +1,10 @@
+<div class="contenedor-ubicacion">
+    @for (location of ListadoUbicaciones; track location.id) {
+        <div>
+            <app-location [ubicacion]="location"></app-location>
+        </div>
+    } @empty {
+        <p>No existen ubicaciones</p>
+    }
+</div>
+
