@@ -1,0 +1,22 @@
+.tarjeta-ubicacion {
+  height: 150px;
+  flex-basis: 1;
+  flex-grow: 1;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: whitesmoke;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: height 1s;
+  interpolate-size: allow-keywords;
+  overflow: hidden;
+}
+
+.tarjeta-ubicacion:hover {
+  height: auto;
+}
