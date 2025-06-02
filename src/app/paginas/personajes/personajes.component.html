@@ -1,9 +1,33 @@
+<section>
+  <form (submit)="buscarPersonajes(); $event.preventDefault()">
+    <input 
+      type="text" 
+      placeholder="Filter by character" 
+      [(ngModel)]="searchText"
+      name="searchText"
+    />
+    <button class="primary" type="submit">Search</button>
+    <button 
+      class="secondary" 
+      type="button" 
+      (click)="limpiarBusqueda()"
+      *ngIf="searchText"
+    >
+      Clear
+    </button>
+  </form>
+</section>
+
+<div *ngIf="isLoading" class="loading">Loading...</div>
+
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
 <div class="contenedor-personajes">
   @for (character of ListadoPersonajes; track character.id) {
     <div>
       <app-character [personajes]="character"></app-character>
     </div>
   } @empty {
-    <p>No existen productos</p>
+    <p *ngIf="!isLoading && !errorMessage">No existen personajes</p>
   }
 </div>
