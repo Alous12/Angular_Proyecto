@@ -1,1 +1,56 @@
+// Contenedor de todas las tarjetas
+.lista-personajes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px; // menos espacio entre tarjetas
+}
 
+// Tarjeta individual
+.tarjeta-personaje {
+  background: linear-gradient(135deg, #97ce4c, #43e0f9);
+  border: 3px solid #00ff00;
+  border-radius: 16px;
+  width: 300px; // más compacto
+  box-shadow: 0 0 15px #00ffcc;
+  font-family: 'Comic Sans MS', 'Patrick Hand', cursive, sans-serif;
+  text-align: center;
+  color: #000;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #43e0f9;
+  }
+
+  img {
+    border-radius: 50%;
+    border: 3px solid #000;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    box-shadow: 0 0 10px #000;
+  }
+
+  p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 0 #fff;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 8px;
+    background-color: #000;
+    color: #00ff00;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #4683ff;
+    }
+    
+  }
+}

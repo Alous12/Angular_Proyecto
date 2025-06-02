@@ -4,4 +4,5 @@
     <p>{{personajes?.created}}</p>
     <p>{{personajes?.status}}</p>
     <p>{{personajes?.species}}</p>
+     <a [routerLink]="['/detalles-personajes', personajes?.id]" class="detalles">Ver detalles</a>
 </div>
