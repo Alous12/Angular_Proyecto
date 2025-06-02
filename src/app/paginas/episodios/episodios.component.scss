@@ -1,6 +1,4 @@
-body {
-  height: 100vh;
-}
+
 .contenedor-episodios {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -16,7 +14,7 @@ body {
 }
 :host {
   display: block;
-  height: 100vh;
+  height: 100%;
   background-color: #0b0c10;
   color: #ffffff;
   font-family: 'Orbitron', sans-serif;
