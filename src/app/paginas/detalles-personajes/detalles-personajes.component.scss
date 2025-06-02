@@ -1,0 +1,51 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #0b0c10, #1f2833);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.tarjeta-personaje {
+  display: flex;
+  flex-direction: row;
+  background-color: #1f2833;
+  border: 3px solid #66fcf1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(102, 252, 241, 0.3);
+  width: 90%;
+  max-width: 900px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.tarjeta-personaje img {
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover;
+  border-right: 3px solid #45a29e;
+}
+
+.tarjeta-personaje .detalles {
+  flex: 1;
+  padding: 2rem;
+  color: #c5c6c7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px #0b0c10;
+  }
+
+  p:first-of-type {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #66fcf1;
+    margin-bottom: 1rem;
+  }
+}
