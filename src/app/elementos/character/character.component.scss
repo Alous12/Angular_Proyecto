@@ -1,56 +1,45 @@
-// Contenedor de todas las tarjetas
-.lista-personajes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px; // menos espacio entre tarjetas
-}
-
-// Tarjeta individual
 .tarjeta-personaje {
-  background: linear-gradient(135deg, #97ce4c, #43e0f9);
-  border: 3px solid #00ff00;
-  border-radius: 16px;
-  width: 300px; // más compacto
-  box-shadow: 0 0 15px #00ffcc;
-  font-family: 'Comic Sans MS', 'Patrick Hand', cursive, sans-serif;
+  background-color: #1f2833;
+  border: 2px solid #66fcf1;
+  border-radius: 15px;
+  padding: 1rem;
   text-align: center;
-  color: #000;
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px #43e0f9;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.6);
   }
 
   img {
-    border-radius: 50%;
-    border: 3px solid #000;
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #45a29e;
+    margin-bottom: 1rem;
     object-fit: cover;
-    margin-bottom: 8px;
-    box-shadow: 0 0 10px #000;
   }
 
   p {
-    margin: 4px 0;
-    font-size: 0.9rem;
-    text-shadow: 1px 1px 0 #fff;
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
   }
 
-  a {
+  .detalles {
     display: inline-block;
-    margin-top: 8px;
-    background-color: #000;
-    color: #00ff00;
-    padding: 5px 10px;
-    border-radius: 6px;
+    margin-top: 0.8rem;
+    padding: 0.5rem 1rem;
+    background-color: #66fcf1;
+    color: #0b0c10;
     text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
 
     &:hover {
-      background-color: #4683ff;
+      background-color: #2ecc71;
     }
-    
   }
 }
