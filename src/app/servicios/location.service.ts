@@ -7,9 +7,16 @@ import { Location } from '../interfaces/location';
 })
 export class LocationService {
 
+  private apiUrl = 'https://rickandmortyapi.com/api/location';
   constructor(private http:HttpClient) { }
 
   obtenerUbicaciones(): Observable<Location> {
-    return this.http.get<Location>('https://rickandmortyapi.com/api/location');
+    return this.http.get<Location>(this.apiUrl);
   }
+
+  obtenerUbicacionesFiltradas(filtros: { [key: string]: string }): Observable<Location> {
+    const queryParams = new URLSearchParams(filtros).toString();
+    return this.http.get<Location>(`${this.apiUrl}/?${queryParams}`);
+}
+
 }
