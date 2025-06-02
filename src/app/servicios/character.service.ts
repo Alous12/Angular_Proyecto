@@ -1,25 +1,26 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Character, results } from '../interfaces/character';
-//import { Character } from '../interfaces/character';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterService {
+  private apiUrl = 'https://rickandmortyapi.com/api/character';
 
-  constructor(private http: HttpClient) { 
-
-  }
+  constructor(private http: HttpClient) { }
 
   obtenerPersonajes(): Observable<Character> {
-    return this.http.get<Character>('https://rickandmortyapi.com/api/character');
-    
+    return this.http.get<Character>(this.apiUrl);
   }
 
   obtenerPersonajePorId(id: number): Observable<results> {
     return this.http.get<results>(`https://rickandmortyapi.com/api/character/${id}`);
     
+  }
+
+  buscarPersonajes(name: string): Observable<Character> {
+    return this.http.get<Character>(`${this.apiUrl}/?name=${name}`);
   }
 }

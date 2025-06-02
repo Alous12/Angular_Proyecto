@@ -1,3 +1,4 @@
+
 :host {
   display: block;
   background-color: #000;
@@ -10,5 +11,66 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #42b983; // Verde de
 }
 
+.error {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #ff6b6b;
+}
+
+.contenedor-personajes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+
+  input {
+    padding: 10px;
+    border: 2px solid #42b983;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+
+    &.primary {
+      background-color: #42b983;
+      color: white;
+
+      &:hover {
+        background-color: darken(#42b983, 10%);
+      }
+    }
+
+    &.secondary {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+
+      &:hover {
+        background-color: darken(#f8f9fa, 5%);
+      }
+    }
+  }
+}
