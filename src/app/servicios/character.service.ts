@@ -17,4 +17,6 @@ export class CharacterService {
     return this.http.get<Character>('https://rickandmortyapi.com/api/character');
     
   }
+
+  
 }

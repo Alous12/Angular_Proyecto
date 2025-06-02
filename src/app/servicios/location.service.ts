@@ -12,4 +12,10 @@ export class LocationService {
   obtenerUbicaciones(): Observable<Location> {
     return this.http.get<Location>('https://rickandmortyapi.com/api/location');
   }
+
+  obtenerUbicacionesFiltradas(filtros: { [key: string]: string }): Observable<Location> {
+  const queryParams = new URLSearchParams(filtros).toString();
+  return this.http.get<Location>('https://rickandmortyapi.com/api/location');
+}
+
 }
