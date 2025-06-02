@@ -1,26 +1,23 @@
-<section>
-  <form (submit)="buscarPersonajes(); $event.preventDefault()">
-    <input 
-      type="text" 
-      placeholder="Filter by character" 
-      [(ngModel)]="searchText"
-      name="searchText"
-    />
-    <button class="primary" type="submit">Search</button>
-    <button 
-      class="secondary" 
-      type="button" 
-      (click)="limpiarBusqueda()"
-      *ngIf="searchText"
-    >
-      Clear
-    </button>
-  </form>
-</section>
+<div class="filtros">
+  <input [(ngModel)]="searchText" placeholder="Nombre (ej. Rick)" />
+  <select [(ngModel)]="status">
+    <option value="">Todos los estados</option>
+    <option value="alive">Vivo</option>
+    <option value="dead">Muerto</option>
+    <option value="unknown">Desconocido</option>
+  </select>
+  <input [(ngModel)]="species" placeholder="Especie (ej. Human)" />
+  <select [(ngModel)]="gender">
+    <option value="">Todos los géneros</option>
+    <option value="male">Masculino</option>
+    <option value="female">Femenino</option>
+    <option value="genderless">Sin género</option>
+    <option value="unknown">Desconocido</option>
+  </select>
+  <button (click)="aplicarFiltro()">Filtrar</button>
+</div>
 
-<div *ngIf="isLoading" class="loading">Loading...</div>
 
-<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 
 <div class="contenedor-personajes">
   @for (character of ListadoPersonajes; track character.id) {

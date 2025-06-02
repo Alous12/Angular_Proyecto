@@ -12,9 +12,14 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './personajes.component.html',
   styleUrl: './personajes.component.scss'
 })
+
+
 export class PersonajesComponent {
   ListadoPersonajes: results[] = [];
   searchText = '';
+  status = '';
+  species = '';
+  gender = '';
   isLoading = false;
   errorMessage = '';
 
@@ -24,9 +29,13 @@ export class PersonajesComponent {
     this.cargarPersonajes();
   }
 
-  cargarPersonajes() {
+  cargarPersonajes(filtros?: { [key: string]: string }) {
     this.isLoading = true;
-    this.characterService.obtenerPersonajes().subscribe({
+    const servicio = filtros
+      ? this.characterService.obtenerPersonajesFiltrados(filtros)
+      : this.characterService.obtenerPersonajes();
+
+    servicio.subscribe({
       next: (data) => {
         this.ListadoPersonajes = data.results;
         this.isLoading = false;
@@ -38,32 +47,13 @@ export class PersonajesComponent {
     });
   }
 
-  buscarPersonajes() {
-    if (!this.searchText.trim()) {
-      this.cargarPersonajes();
-      return;
-    }
+  aplicarFiltro() {
+    const filtros: { [key: string]: string } = {};
+    if (this.searchText) filtros['name'] = this.searchText;
+    if (this.status) filtros['status'] = this.status;
+    if (this.species) filtros['species'] = this.species;
+    if (this.gender) filtros['gender'] = this.gender;
 
-    this.isLoading = true;
-    this.characterService.buscarPersonajes(this.searchText).subscribe({
-      next: (data) => {
-        this.ListadoPersonajes = data.results || [];
-        this.isLoading = false;
-        if (data.results?.length === 0) {
-          this.errorMessage = 'No se encontraron personajes';
-        }
-      },
-      error: (err) => {
-        this.errorMessage = 'Personaje no encontrado';
-        this.ListadoPersonajes = [];
-        this.isLoading = false;
-      }
-    });
-  }
-
-  limpiarBusqueda() {
-    this.searchText = '';
-    this.errorMessage = '';
-    this.cargarPersonajes();
+    this.cargarPersonajes(filtros);
   }
 }

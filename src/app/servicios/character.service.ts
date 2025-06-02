@@ -16,11 +16,14 @@ export class CharacterService {
   }
 
   obtenerPersonajePorId(id: number): Observable<results> {
-    return this.http.get<results>(`https://rickandmortyapi.com/api/character/${id}`);
+    return this.http.get<results>(`${this.apiUrl}/${id}`);
     
   }
 
-  buscarPersonajes(name: string): Observable<Character> {
-    return this.http.get<Character>(`${this.apiUrl}/?name=${name}`);
+  obtenerPersonajesFiltrados(filtros: { [key: string]: string }): Observable<Character> {
+    const queryParams = new URLSearchParams(filtros).toString();
+    const url = `${this.apiUrl}/?${queryParams}`;
+    return this.http.get<Character>(url);
   }
+  
 }
