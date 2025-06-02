@@ -12,7 +12,18 @@ export class CharacterService {
   constructor(private http: HttpClient) { }
 
   obtenerPersonajes(): Observable<Character> {
-    return this.http.get<Character>('https://rickandmortyapi.com/api/character');
+    return this.http.get<Character>(this.apiUrl);
+  }
+
+  obtenerPersonajePorId(id: number): Observable<results> {
+    return this.http.get<results>(`${this.apiUrl}/${id}`);
     
   }
+
+  obtenerPersonajesFiltrados(filtros: { [key: string]: string }): Observable<Character> {
+    const queryParams = new URLSearchParams(filtros).toString();
+    const url = `${this.apiUrl}/?${queryParams}`;
+    return this.http.get<Character>(url);
+  }
+  
 }
