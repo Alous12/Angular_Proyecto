@@ -25,5 +25,11 @@ export class CharacterService {
     const url = `${this.apiUrl}/?${queryParams}`;
     return this.http.get<Character>(url);
   }
+
+  obtenerMultiplesEpisodiosPorId(ids: number[]): Observable<any> {
+  const idsString = ids.join(',');
+  return this.http.get<any>(`https://rickandmortyapi.com/api/episode/${idsString}`);
+  }
+
   
 }

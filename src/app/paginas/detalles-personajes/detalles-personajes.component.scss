@@ -49,3 +49,44 @@
     margin-bottom: 1rem;
   }
 }
+.detalles h4 {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  color: #66fcf1;
+  border-bottom: 2px solid #45a29e;
+  padding-bottom: 0.5rem;
+  text-shadow: 1px 1px #0b0c10;
+}
+
+.detalles ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #66fcf1 transparent;
+}
+
+.detalles ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.detalles ul::-webkit-scrollbar-thumb {
+  background-color: #66fcf1;
+  border-radius: 10px;
+}
+
+.detalles li {
+  margin: 0.4rem 0;
+  padding: 0.3rem 0.6rem;
+  background-color: rgba(102, 252, 241, 0.1);
+  border-left: 3px solid #66fcf1;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.detalles li:hover {
+  background-color: rgba(102, 252, 241, 0.2);
+}
