@@ -6,6 +6,7 @@ import { PersonajesComponent } from './paginas/personajes/personajes.component';
 import { UbicacionComponent } from './paginas/ubicacion/ubicacion.component';
 import { EpisodiosComponent } from './paginas/episodios/episodios.component';
 import { DetallesPersonajesComponent } from './paginas/detalles-personajes/detalles-personajes.component';
+import { DetallesUbicacionComponent } from './paginas/detalles-ubicacion/detalles-ubicacion.component';
 
 export const routes: Routes = [
 
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path: 'ubicacion', component: UbicacionComponent},
     {path: 'episodios', component: EpisodiosComponent},
     {path: 'detalles-personajes/:id', component: DetallesPersonajesComponent},
+    {path: 'detalles-ubicacion/:id', component: DetallesUbicacionComponent},
     {path: '', redirectTo: '/inicio', pathMatch: 'full'},
     {path: '**', component: PaginaNoEncontrontadaComponent},
     
