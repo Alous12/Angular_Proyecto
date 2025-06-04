@@ -25,7 +25,7 @@ export class DetallesPersonajesComponent {
 
        const episodiosIds = personaje.episode.map((url: string) => Number(url.split('/').pop()));
 
-    // Obtener detalles de los episodios
+    
     this.personajeService.obtenerMultiplesEpisodiosPorId(episodiosIds).subscribe((episodiosData) => {
       this.episodios = Array.isArray(episodiosData) ? episodiosData : [episodiosData];
     });
